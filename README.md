@@ -32,6 +32,7 @@ This project is a web application built using **Flask** and **Playwright** that 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Manishk93930/Think-Act.git
+<<<<<<< HEAD
 cd Think-Act/court-data-fetcher
 ```
 
@@ -78,3 +79,8 @@ python main.py
 ## License
 
 This project is licensed under the MIT License.
+=======
+cd court-data-fetcher
+
+### 2. Configure youre DB Credentials in main.py
+>>>>>>> d0b362c67189d29440e90aa84d7ad977a02a0832
