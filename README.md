@@ -28,5 +28,5 @@ This project is a web application built using Flask and Playwright that scrapes 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/court-data-fetcher.git
+git clone https://github.com/Manishk93930/Think-Act.git
 cd court-data-fetcher
