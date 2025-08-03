@@ -30,3 +30,5 @@ This project is a web application built using Flask and Playwright that scrapes 
 ```bash
 git clone https://github.com/Manishk93930/Think-Act.git
 cd court-data-fetcher
+
+### 2. Configure youre DB Credentials in main.py
