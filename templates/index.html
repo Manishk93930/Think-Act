@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Court Case | Court Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Court Case Data Fetcher</h1>
+
+        <form method="post">
+            <label>Case Type:</label>
+            <input type="text" name="case_type" placeholder="Eg: CRL.M.C." required>
+
+            <label>Case Number:</label>
+            <input type="text" name="case_number" placeholder="Eg: 2103" required>
+
+            <label>Filing Year:</label>
+            <input type="text" name="filing_year" placeholder="Eg: 2025" required>
+
+            <button type="submit">Fetch Details</button>
+        </form>
+    </div>
+</body>
+</html>

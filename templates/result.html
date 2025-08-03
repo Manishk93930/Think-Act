@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Results | Court Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if error %}
+    <script>
+        alert("{{ error }}");
+    </script>
+    {% endif %}
+    <div class="container">
+        <h1>Case Results</h1>
+
+        <a href="/" class="back-button">Fetch Another Case</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Case No</th>
+                    <th>Judgment Date</th>
+                    <th>Parties</th>
+                    <th>PDF</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in results %}
+                    <tr>
+                        <td>{{ item.serial_no }}</td>
+                        <td>{{ item.case_no }}</td>
+                        <td>{{ item.judgment_date }}</td>
+                        <td>{{ item.parties }}</td>
+                        <td>
+                            {% if item.pdf_url %}
+                                <a href="{{ item.pdf_url }}" target="_blank">📎 View</a>
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
