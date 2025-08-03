@@ -2,13 +2,16 @@ from flask import Flask, render_template, request
 from scraper import fetch_case_details
 import pymysql
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
 MYSQL_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Kjvm*7483',  # <-- CHANGE THIS
+    'password': os.getenv('MYSQL_PASSWORD'),
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
 }
@@ -16,7 +19,7 @@ MYSQL_CONFIG = {
 DB_NAME = 'court_data'
 
 def init_db():
-    # Step 1: Connect without selecting DB and create court_data if not exists
+    #Connect without selecting DB and create court_data if not exists
     conn = pymysql.connect(**MYSQL_CONFIG)
     try:
         with conn.cursor() as cursor:
@@ -25,7 +28,7 @@ def init_db():
     finally:
         conn.close()
 
-    # Step 2: Connect to court_data and create table if not exists
+    #Connect to court_data and create table if not exists
     conn = pymysql.connect(database=DB_NAME, **MYSQL_CONFIG)
     try:
         with conn.cursor() as cursor:
